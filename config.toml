@@ -1,0 +1,10 @@
+baseURL = "http://localhost:1313/"
+languageCode = "ru-ru"
+title = "Мой CleanWhite Блог"
+theme = "hugo-theme-cleanwhite"
+
+[params]
+  header_image = "img/home-bg.jpg"
+  # Опционально: для комментариев
+  # disqusShortname = "your-disqus-shortname"
+  # twikoo_env_id = "your-twikoo-env-id"
