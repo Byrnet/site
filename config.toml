@@ -2,6 +2,7 @@ baseURL = "https://byrnet.github.io/site/"
 languageCode = "ru-ru"
 title = "Мой CleanWhite Блог"
 theme = "hugo-theme-cleanwhite"
+publishDir = "public"
 
 [params]
   header_image = "img/home-bg.jpg"
