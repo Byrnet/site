@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="Nginmesh是NGINX的Service Mesh开源项目，用于Istio服务网格平台中的数据面代理。它旨在提供七层负载均衡和服务路由功能，与Istio集成作为sidecar部署，并将以“标准，可靠和安全的方式”使得服务间通信更容易。Nginmesh在今年底已经连续发布了0.2和0.3版本，提供了服务发现，请求转发，路由规则，性能指标收集等功能。本文介绍如何采用kubeadmin安装kubernetes集群并部署Nginmesh sidecar。" />
     
 
-    <meta property="og:url" content="http://localhost:1313/2018/01/02/nginmesh-install/" />
+    <meta property="og:url" content="https://byrnet.github.io/site/2018/01/02/nginmesh-install/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -34,40 +34,40 @@
     
 
     <meta name="keyword"  content="赵化冰, zhaohuabing, Zhaohuabing, , 赵化冰的网络日志, 赵化冰的博客, Zhaohuabing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/site/img/favicon.ico">
 
     <title>Nginx开源Service Mesh组件Nginmesh安装指南 | 赵化冰的博客 | Zhaohuabing Blog</title>
 
-    <link rel="canonical" href="/2018/01/02/nginmesh-install/">
+    <link rel="canonical" href="/site/2018/01/02/nginmesh-install/">
 
     
 
     
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/site/css/bootstrap.min.css">
 
     
-    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+    <link rel="stylesheet" href="/site/css/hugo-theme-cleanwhite.min.css">
 
     
-    <link rel="stylesheet" href="/css/zanshang.min.css">
+    <link rel="stylesheet" href="/site/css/zanshang.min.css">
 
     
-    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+    <link rel="stylesheet" href="/site/css/font-awesome.all.min.css">
 
     
     
 
     
-    <script src="/js/jquery.min.js"></script>
+    <script src="/site/js/jquery.min.js"></script>
 
     
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/site/js/bootstrap.min.js"></script>
 
     
-    <script src="/js/hux-blog.min.js"></script>
+    <script src="/site/js/hux-blog.min.js"></script>
 
     
-    <script src="/js/lazysizes.min.js"></script>
+    <script src="/site/js/lazysizes.min.js"></script>
 
     
     
@@ -103,15 +103,15 @@
                     
                         
                         <li>
-                            <a href="/categories/life/">life</a>
+                            <a href="/site/categories/life/">life</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/tech/">tech</a>
+                            <a href="/site/categories/tech/">tech</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/tips/">tips</a>
+                            <a href="/site/categories/tips/">tips</a>
                         </li>
                         
                     
@@ -124,7 +124,7 @@
                         <li><a href="/about//">ABOUT</a></li>
                     
 		            <li>
-                        <a href="/search"><i class="fa fa-search"></i></a>
+                        <a href="/site/search"><i class="fa fa-search"></i></a>
 		           </li>
                 </ul>
             </div>
@@ -164,7 +164,7 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+<header class="intro-header" style="background-image: url('/site/img/home-bg-jeep.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
@@ -525,7 +525,7 @@ iptables -t nat -N ISTIO_OUTPUT                                               -m
 <script>
     Artalk.init({
         el: '#Comments',
-        pageKey: 'http:\/\/localhost:1313\/2018\/01\/02\/nginmesh-install\/',
+        pageKey: 'https:\/\/byrnet.github.io\/site\/2018\/01\/02\/nginmesh-install\/',
         pageTitle: 'Nginx开源Service Mesh组件Nginmesh安装指南',
         server: 'https:\/\/xxx.xxx.com',
         site: 'xxx blog',
@@ -552,7 +552,7 @@ iptables -t nat -N ISTIO_OUTPUT                                               -m
         <div class="short-about">
             
             <a href="/about">
-               <img src="/img/zhaohuabing.png" alt="avatar" style="cursor: pointer" />
+               <img src="/site/img/zhaohuabing.png" alt="avatar" style="cursor: pointer" />
             </a>
             
             
@@ -576,7 +576,7 @@ iptables -t nat -N ISTIO_OUTPUT                                               -m
                
                
                <li>
-                   <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                   <a target="_blank" href="/site/your%20wechat%20qr%20code%20image">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
@@ -744,7 +744,7 @@ iptables -t nat -N ISTIO_OUTPUT                                               -m
 		            
                     
                     <li>
-                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                        <a target="_blank" href="/site/your%20wechat%20qr%20code%20image">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
@@ -905,7 +905,7 @@ iptables -t nat -N ISTIO_OUTPUT                                               -m
     
 
 
-    loadAsync("\/js\/jquery.nav.js", function () {
+    loadAsync("\/site\/js\/jquery.nav.js", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",
             changeHash: !1,

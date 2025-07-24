@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="作为一种架构模式，微服务将复杂系统切分为数十乃至上百个小服务，每个服务负责实现一个独立的业务逻辑。这些小服务易于被小型的软件工程师团队所理解和修改，并带来了语言和框架选择灵活性，缩短应用开发上线时间，可根据不同的工作负载和资源要求对服务进行独立缩扩容等优势。另一方面，当应用被拆分为多个微服务进程后，进程内的方法调用变成了了进程间的远程调用。引入了对大量服务的连接、管理和监控的复杂性,本文介绍了Service Mesh模式如何应对微服务架构的这些挑战，以及Service Mesh的明星开源项目Istio。" />
     
 
-    <meta property="og:url" content="http://localhost:1313/2018/03/29/what-is-service-mesh-and-istio/" />
+    <meta property="og:url" content="https://byrnet.github.io/site/2018/03/29/what-is-service-mesh-and-istio/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -34,40 +34,40 @@
     
 
     <meta name="keyword"  content="赵化冰, zhaohuabing, Zhaohuabing, , 赵化冰的网络日志, 赵化冰的博客, Zhaohuabing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/site/img/favicon.ico">
 
     <title>谈谈微服务架构中的基础设施：Service Mesh与Istio | 赵化冰的博客 | Zhaohuabing Blog</title>
 
-    <link rel="canonical" href="/2018/03/29/what-is-service-mesh-and-istio/">
+    <link rel="canonical" href="/site/2018/03/29/what-is-service-mesh-and-istio/">
 
     
 
     
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/site/css/bootstrap.min.css">
 
     
-    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+    <link rel="stylesheet" href="/site/css/hugo-theme-cleanwhite.min.css">
 
     
-    <link rel="stylesheet" href="/css/zanshang.min.css">
+    <link rel="stylesheet" href="/site/css/zanshang.min.css">
 
     
-    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+    <link rel="stylesheet" href="/site/css/font-awesome.all.min.css">
 
     
     
 
     
-    <script src="/js/jquery.min.js"></script>
+    <script src="/site/js/jquery.min.js"></script>
 
     
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/site/js/bootstrap.min.js"></script>
 
     
-    <script src="/js/hux-blog.min.js"></script>
+    <script src="/site/js/hux-blog.min.js"></script>
 
     
-    <script src="/js/lazysizes.min.js"></script>
+    <script src="/site/js/lazysizes.min.js"></script>
 
     
     
@@ -103,15 +103,15 @@
                     
                         
                         <li>
-                            <a href="/categories/life/">life</a>
+                            <a href="/site/categories/life/">life</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/tech/">tech</a>
+                            <a href="/site/categories/tech/">tech</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/tips/">tips</a>
+                            <a href="/site/categories/tips/">tips</a>
                         </li>
                         
                     
@@ -124,7 +124,7 @@
                         <li><a href="/about//">ABOUT</a></li>
                     
 		            <li>
-                        <a href="/search"><i class="fa fa-search"></i></a>
+                        <a href="/site/search"><i class="fa fa-search"></i></a>
 		           </li>
                 </ul>
             </div>
@@ -164,7 +164,7 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+<header class="intro-header" style="background-image: url('/site/img/home-bg-jeep.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
@@ -474,7 +474,7 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
 <script>
     Artalk.init({
         el: '#Comments',
-        pageKey: 'http:\/\/localhost:1313\/2018\/03\/29\/what-is-service-mesh-and-istio\/',
+        pageKey: 'https:\/\/byrnet.github.io\/site\/2018\/03\/29\/what-is-service-mesh-and-istio\/',
         pageTitle: '谈谈微服务架构中的基础设施：Service Mesh与Istio',
         server: 'https:\/\/xxx.xxx.com',
         site: 'xxx blog',
@@ -501,7 +501,7 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
         <div class="short-about">
             
             <a href="/about">
-               <img src="/img/zhaohuabing.png" alt="avatar" style="cursor: pointer" />
+               <img src="/site/img/zhaohuabing.png" alt="avatar" style="cursor: pointer" />
             </a>
             
             
@@ -525,7 +525,7 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
                
                
                <li>
-                   <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                   <a target="_blank" href="/site/your%20wechat%20qr%20code%20image">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
@@ -693,7 +693,7 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
 		            
                     
                     <li>
-                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                        <a target="_blank" href="/site/your%20wechat%20qr%20code%20image">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
@@ -854,7 +854,7 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
     
 
 
-    loadAsync("\/js\/jquery.nav.js", function () {
+    loadAsync("\/site\/js\/jquery.nav.js", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",
             changeHash: !1,
