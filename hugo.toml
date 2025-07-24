@@ -1,4 +1,4 @@
-baseurl = "https://zhaohuabing.com"
+baseURL = "https://byrnet.github.io/site/"
 title = "Huabing Blog"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
