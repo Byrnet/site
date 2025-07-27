@@ -1,0 +1,131 @@
+﻿<#
+.SYNOPSIS
+    Создает единый текстовый снимок контента сайта (статьи, тексты из шаблонов)
+    для анализа с помощью ИИ на предмет стиля, грамотности и маркетинга.
+#>
+
+# ===================================================================================
+#                      AI CONTENT SNAPSHOT TOOL
+# ===================================================================================
+
+# --- КОНФИГУРАЦИЯ ---
+
+# Путь к папке проекта. Задан автоматически.
+$projectBasePath = "D:\github\bynet\site"
+
+# 1. Папки с исходным контентом, которые НУЖНО включить в снимок.
+$includedFolders = @(
+    "content",  # Главная папка со всем текстовым содержимым (статьи, страницы).
+    "layouts",  # Шаблоны сайта, могут содержать "зашитый" текст.
+    "data"      # Файлы с данными (например, контакты, списки).
+)
+
+# 2. Файлы в корне проекта, которые содержат важный текст (заголовок, описание сайта).
+$includedRootFiles = @(
+    "hugo.toml",
+    "config.toml",
+    "config.yaml",
+    "config.yml"
+)
+
+# 3. Расширения файлов, которые содержат текст.
+$allowedExtensions = @(
+    ".md", ".markdown", # Основные файлы контента
+    ".html",            # Файлы шаблонов
+    ".toml", ".yaml", ".yml", ".json" # Файлы данных и конфигурации
+)
+
+# 4. Папки, которые следует ПОЛНОСТЬЮ игнорировать.
+$excludedFolders = @(
+    "node_modules", ".git", ".vscode", "dist", "build", "public", "resources", "themes",
+    "assets", # Обычно здесь стили и скрипты, а не контент
+    "static"  # Здесь тоже в основном скрипты, стили, изображения
+)
+
+# Имя для итогового файла-снимка.
+$outputFileName = "AI_Content_Snapshot.txt"
+
+# --- ЛОГИКА СКРИПТА (Ниже ничего редактировать не нужно) ---
+
+$ErrorActionPreference = "Stop"
+
+# 1. Установка и проверка пути к проекту
+Write-Host "--- AI Content Snapshot Tool ---" -ForegroundColor Yellow
+Write-Host "Проект: $projectBasePath" -ForegroundColor Cyan
+Write-Host "Собираю текстовый контент из папок: $($includedFolders -join ', ')" -ForegroundColor Cyan
+
+if (-not (Test-Path -Path $projectBasePath -PathType Container)) {
+    Write-Host "ОШИБКА: Папка '$projectBasePath' не найдена." -ForegroundColor Red
+    Start-Sleep -Seconds 10
+    exit 1
+}
+
+$outputFilePath = Join-Path -Path $projectBasePath -ChildPath $outputFileName
+Clear-Content -Path $outputFilePath -ErrorAction SilentlyContinue
+Write-Host "OK. Начинаю обработку..." -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$allFiles = Get-ChildItem -Path $projectBasePath -Recurse -File
+$filesProcessedCount = 0
+$totalCharacters = 0
+
+# 2. Основной цикл обработки файлов
+foreach ($file in $allFiles) {
+    # Фильтр 1: Пропустить файл, если он находится в глобально исключенной папке
+    $isGloballyExcluded = $false
+    foreach ($folder in $excludedFolders) {
+        if ($file.DirectoryName -like "*\$folder*" -or $file.DirectoryName -like "*\/$folder*") {
+            $isGloballyExcluded = $true; break
+        }
+    }
+    if ($isGloballyExcluded) { continue }
+
+    # Фильтр 2: Проверить, находится ли файл в одной из разрешенных папок или является разрешенным файлом в корне
+    $isWhitelisted = $false
+    $relativeDirPath = $file.DirectoryName.Substring($projectBasePath.Length).TrimStart("\/")
+
+    if ([string]::IsNullOrEmpty($relativeDirPath) -and ($includedRootFiles -contains $file.Name.ToLower())) {
+        $isWhitelisted = $true
+    } else {
+        foreach ($folder in $includedFolders) {
+            if ($relativeDirPath -eq $folder -or $relativeDirPath -like "$folder\*") {
+                $isWhitelisted = $true; break
+            }
+        }
+    }
+    
+    if (-not $isWhitelisted) { continue }
+
+    # Фильтр 3: Пропустить файл, если его расширение не входит в список разрешенных
+    if (-not ($allowedExtensions -contains $file.Extension.ToLower())) {
+        continue
+    }
+
+    # Если файл прошел все проверки, добавляем его в снимок
+    $filesProcessedCount++
+    $relativePath = $file.FullName.Substring($projectBasePath.Length).TrimStart("\/")
+    $fileHeader = "#file: $relativePath"
+    $fileContent = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
+
+    Add-Content -Path $outputFilePath -Value "$fileHeader`n$fileContent`n`n"
+    $totalCharacters += $fileContent.Length
+}
+
+# 3. Отображение итоговой статистики
+$fileSizeKB = if (Test-Path $outputFilePath) { (Get-Item $outputFilePath).Length / 1KB } else { 0 }
+$estimatedTokens = [Math]::Round($totalCharacters / 4.5) # Для русского текста токенов обычно меньше
+
+Write-Host "--------------------------------"
+Write-Host "Снимок текстового контента успешно создан!" -ForegroundColor Green
+Write-Host
+Write-Host "  > Выходной файл: $outputFilePath"
+Write-Host "  > Обработано файлов: $filesProcessedCount"
+Write-Host "  > Размер файла: $($fileSizeKB.ToString('F2')) KB"
+Write-Host "  > Примерное количество токенов: $($estimatedTokens.ToString('N0'))"
+Write-Host
+Write-Host "Теперь вы можете загружать этот файл в ИИ для анализа текстов." -ForegroundColor Yellow
+
+# Пауза для просмотра результатов
+Write-Host "Это окно закроется через 15 секунд..."
+Start-Sleep -Seconds 15
+exit 0
