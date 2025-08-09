@@ -1,5 +1,5 @@
-﻿baseURL = "https://byrnet.github.io/site/"
-title = "РџСЂРѕРµРєС‚ РђСѓРґРёС‚"
+baseURL = "https://byrnet.github.io/site/"
+title = "Проект Аудит"
 theme = "hugo-theme-cleanwhite"
 languageCode = "ru-ru"
 preserveTaxonomyNames = true
@@ -20,13 +20,13 @@ home = ["HTML", "RSS", "Algolia"]
 
 [params]
   header_image = "img/home-bg-jeep.jpg"
-  SEOTitle = "РџСЂРѕРµРєС‚ РђСѓРґРёС‚ | Р¤РёРЅР°РЅСЃРѕРІРѕ-С‚РµС…РЅРёС‡РµСЃРєРёР№ Р°СѓРґРёС‚ Рё СЃС‚СЂРѕРёС‚РµР»СЊРЅС‹Р№ РєРѕРЅС‚СЂРѕР»СЊ"
-  description = "РќРµР·Р°РІРёСЃРёРјС‹Р№ Р°СѓРґРёС‚ СЃС‚СЂРѕРёС‚РµР»СЊРЅС‹С… РїСЂРѕРµРєС‚РѕРІ: С„РёРЅР°РЅСЃРѕРІС‹Р№ Рё С‚РµС…РЅРёС‡РµСЃРєРёР№ РєРѕРЅС‚СЂРѕР»СЊ, СѓРїСЂР°РІР»РµРЅРёРµ РїСЂРѕРµРєС‚Р°РјРё Рё СЃС‚РѕРёРјРѕСЃС‚СЊСЋ, СЃС‚СЂРѕРёС‚РµР»СЊРЅР°СЏ СЌРєСЃРїРµСЂС‚РёР·Р°."
-  keyword = "РїСЂРѕРµРєС‚ Р°СѓРґРёС‚, СЃС‚СЂРѕРёС‚РµР»СЊРЅС‹Р№ Р°СѓРґРёС‚, С‚РµС…РЅР°РґР·РѕСЂ, СЃС‚СЂРѕРёС‚РµР»СЊРЅС‹Р№ РєРѕРЅС‚СЂРѕР»СЊ, С„РёРЅР°РЅСЃРѕРІРѕ-С‚РµС…РЅРёС‡РµСЃРєРёР№ Р°СѓРґРёС‚, СѓРїСЂР°РІР»РµРЅРёРµ СЃС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРѕРј"
+  SEOTitle = "Проект Аудит | Финансово-технический аудит и строительный контроль"
+  description = "Независимый аудит строительных проектов: финансовый и технический контроль, управление проектами и стоимостью, строительная экспертиза."
+  keyword = "проект аудит, строительный аудит, технадзор, строительный контроль, финансово-технический аудит, управление строительством"
   upstreamAttribution = true
 
   image_404 = "img/404-bg.jpg"
-  title_404 = "РЎС‚СЂР°РЅРёС†Р° РЅРµ РЅР°Р№РґРµРЅР° :("
+  title_404 = "Страница не найдена :("
   omit_categories = false
 
   # leancloud storage for page view counter
@@ -34,15 +34,15 @@ home = ["HTML", "RSS", "Algolia"]
   leancloud_app_id = ""
   leancloud_app_key = ""
 
-  # algolia site search
-  algolia_search = true
+  # algolia site search (отключено, чтобы избежать ошибок; включите и заполните ключи если нужно)
+  algolia_search = false
   algolia_appId = ""
   algolia_indexName = ""
   algolia_apiKey = ""
 
   # Sidebar settings
-  sidebar_about_description = "Р’Р°С€ РЅРµР·Р°РІРёСЃРёРјС‹Р№ РїР°СЂС‚РЅРµСЂ РІ СЃС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРµ. РћР±РµСЃРїРµС‡РёРІР°РµРј РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ, РєРѕРЅС‚СЂРѕР»СЊ Р·Р°С‚СЂР°С‚ Рё СЃРѕР±Р»СЋРґРµРЅРёРµ СЃСЂРѕРєРѕРІ."
-  sidebar_avatar = "img/zhaohuabing.png"
+  sidebar_about_description = "Ваш независимый партнер в строительстве. Обеспечиваем прозрачность, контроль затрат и соблюдение сроков."
+  sidebar_avatar = "img/avatar.png"  # Замените на реальный путь к вашему аватару
 
   featured_tags = true
   featured_condition_size = 1
@@ -59,11 +59,10 @@ home = ["HTML", "RSS", "Algolia"]
   # Follow https://twikoo.js.org/ to set up your own env_id
   twikoo_env_id = ""
 
-  # Artalk comments
-  # Follow https://artalk.js.org/ to set up your own server
-  artalk_enable = true
-  artalk_server = "https://xxx.xxx.com"
-  artalk_site = "xxx blog"
+  # Artalk comments (отключено, чтобы избежать ошибок; включите и настройте сервер если нужно)
+  artalk_enable = false
+  artalk_server = ""
+  artalk_site = ""
 
   #Enable wechat pay & alipay to allow readers send reward money if they like the articles
   reward = true
@@ -78,20 +77,20 @@ home = ["HTML", "RSS", "Algolia"]
 
   [params.social]
   rss            = true
-  email          = "youremail@gmail.com"
-  linkedin       = "https://www.linkedin.com/in/yourlinkedinid"
-  stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
-  github         = "https://github.com/yourgithub"
-  wechat         = "your wechat qr code image"
+  email          = "info@project-audit.ru"  # Замените на реальный email
+  linkedin       = "https://www.linkedin.com/company/project-audit"  # Замените
+  stackoverflow  = "https://stackoverflow.com/users/yourid"  # Замените
+  github         = "https://github.com/byrnet"  # Замените
+  wechat         = "img/wechat-qr.png"  # Замените на реальный QR
 
   [[params.additional_menus]]
-  title =  "РђР РҐРР’"
+  title =  "АРХИВ"
   href =  "/archive/"
   [[params.additional_menus]]
-  title =  "РЈРЎР›РЈР“Р"
+  title =  "УСЛУГИ"
   href =  "/services/"
   [[params.additional_menus]]
-  title =  "Рћ РќРђРЎ"
+  title =  "О НАС"
   href =  "/about/"
 
 [outputFormats.Algolia]
@@ -112,4 +111,4 @@ params = ["categories", "tags"]
     style = "dracula"
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+      unsafe = true  # Оставлено, но будьте осторожны с безопасностью

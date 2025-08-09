@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Searches on Huabing Blog</title>
+    <title>Searches on Проект Аудит</title>
     <link>http://localhost:1313/site/search/</link>
-    <description>Recent content in Searches on Huabing Blog</description>
+    <description>Recent content in Searches on Проект Аудит</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>ru-ru</language>
     <atom:link href="http://localhost:1313/site/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>Поиск</title>
       <link>http://localhost:1313/site/search/placeholder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/site/search/placeholder/</guid>
-      <description></description>
+      <description>&lt;p&gt;Это страница поиска. Используйте форму выше для поиска по сайту.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

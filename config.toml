@@ -1,7 +1,0 @@
-﻿baseURL = "https://byrnet.github.io/site/"
-languageCode = "ru-ru"
-title = "РџСЂРѕРµРєС‚ РђСѓРґРёС‚"
-theme = "hugo-theme-cleanwhite"
-
-[params]
-  header_image = "img/home-bg.jpg"

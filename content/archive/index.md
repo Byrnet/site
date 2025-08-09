@@ -1,6 +1,6 @@
----
-title: "Posts Archive"
+﻿---
+title: "Архив"
 layout: archive
 type: archive
-description: Archive of historical posts.
+description: "Архив наших публикаций и кейсов."
 ---
