@@ -1,6 +1,5 @@
 baseURL = "https://byrnet.github.io/site/"
 title = "Huabing Blog"
-theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
 preserveTaxonomyNames = true
 hasCJKLanguage = true
