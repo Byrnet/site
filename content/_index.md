@@ -4,7 +4,7 @@ description: "Анализ ошибок в проекте дома до нача
 keywords: "аудит строительного проекта, проверка проекта дома, ошибки в проекте коттеджа, проверка проекта перед стройкой"
 ---
 
-<div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(107, 166, 87, 0.8), rgba(90, 153, 73, 0.8)), url('/img/audit-bg.jpg') center/cover; border-radius: 12px; margin: 40px 0; color: white;">
+<div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(107, 166, 87, 0.8), rgba(90, 153, 73, 0.8)), url('/site/img/audit-bg.jpg') center/cover; border-radius: 12px; margin: 40px 0; color: white;">
   <h1 style="font-size: 3em; margin: 20px 0; color: #e8d4b8; text-transform: uppercase; letter-spacing: 2px;">Аудит проектных решений</h1>
   <p style="font-size: 1.5em; color: #c9b6a8; letter-spacing: 1px; margin: 20px 0;">Независимая проверка вашего проекта дома перед началом строительства</p>
   <p style="font-size: 1.1em; color: #d4c4a8; margin: 20px 0; font-weight: bold;">✓ Выявляем ошибки  ✓ Экономим ваш бюджет  ✓ Гарантия качества</p>
