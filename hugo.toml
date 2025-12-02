@@ -1,3 +1,4 @@
+theme = ""
 baseURL = "https://byrnet.github.io/site/"
 title = "Huabing Blog"
 languageCode = "en-us"
