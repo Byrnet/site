@@ -3,11 +3,12 @@ title: "Аудит Проектных Решений - Строительств�
 description: "Профессиональный аудит проектов жилых зданий, оценка архитектурных и конструктивных решений"
 ---
 
-<div style="text-align: center; padding: 60px 20px; background: linear-gradient(rgba(44, 90, 160, 0.85), rgba(30, 60, 114, 0.85)), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 400%22><defs><linearGradient id=%22grad1%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 style=%22stop-color:%236ba657;stop-opacity:1%22 /><stop offset=%22100%25%22 style=%22stop-color:%235a9949;stop-opacity:1%22 /></linearGradient></defs><rect width=%221200%22 height=%22400%22 fill=%22url(%23grad1)%22/><circle cx=%22200%22 cy=%22200%22 r=%22120%22 fill=%22%23d4b89f%22 opacity=%220.1%22/><circle cx=%221000%22 cy=%22200%22 r=%2280%22 fill=%22%23d4b89f%22 opacity=%220.1%22/></svg>'); background-size: cover; background-position: center; border-radius: 12px; margin: 40px 0; color: white;">
+<div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #6ba657 0%, #5a9949 100%); border-radius: 12px; margin: 40px 0; color: white;">
   <h1 style="font-size: 3em; margin: 20px 0; color: #e8d4b8; text-transform: uppercase; letter-spacing: 2px;">АУДИТ ПРОЕКТОВ</h1>
   <p style="font-size: 1.3em; color: #c9b6a8; letter-spacing: 2px; margin: 20px 0;">Строительство | Проектирование | Архитектура</p>
   <div style="width: 200px; height: 3px; background: linear-gradient(to right, #c9b6a8, #e8d4b8); margin: 30px auto;"></div>
 </div>
+
 ## Профессиональный Аудит Проектных Решений в Строительстве
 
 Мы специализируемся на комплексной оценке проектных решений жилых зданий, коттеджей и многоквартирных домов. На основе 20 лет опыта в строительстве и архитектуре, предоставляем экспертное заключение о качестве проектной документации.
