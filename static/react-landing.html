@@ -15,6 +15,85 @@
   <script type="text/babel">
     const { useState } = React;
 
+
+          // Cases Carousel Component
+      function CasesCarousel() {
+        const [currentIndex, setCurrentIndex] = useState(0);
+        
+        const cases = [
+          {
+            title: 'Жилой комплекс – 11 000 м²',
+            description: 'Оптимизация конструктивных схем, экономия 18.7%.',
+            image: 'img/audit-bg.jpg'
+          },
+          {
+            title: 'Промобъект – 2 800 м²',
+            description: 'Снижение расхода материалов, экономия в миллионах.',
+            image: 'img/audit-bg.jpg'
+          },
+          {
+            title: 'Реконструкция госучреждения',
+            description: 'Оптимизация инженерии, экономия 11%.',
+            image: 'img/audit-bg.jpg'
+          },
+          {
+            title: 'Торговый центр – 15 000 м²',
+            description: 'Оптимизация фундамента и несущих конструкций, экономия 14.2%.',
+            image: 'img/audit-bg.jpg'
+          },
+          {
+            title: 'Офисный центр – 8 500 м²',
+            description: 'Аудит инженерных систем, снижение эксплуатационных расходов на 25%.',
+            image: 'img/audit-bg.jpg'
+          },
+          {
+            title: 'Завод по производству – 20 000 м²',
+            description: 'Комплексная оптимизация проекта, экономия 16.5%.',
+            image: 'img/audit-bg.jpg'
+          }
+        ];
+        
+        const nextSlide = () => {
+          setCurrentIndex((prev) => (prev + 1) % cases.length);
+        };
+        
+        const prevSlide = () => {
+          setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
+        };
+        
+        const visibleCases = [];
+        for (let i = 0; i < 3; i++) {
+          visibleCases.push(cases[(currentIndex + i) % cases.length]);
+        }
+        
+        return (
+          <div className="relative mt-6">
+            <div className="grid md:grid-cols-3 gap-6">
+              {visibleCases.map((caseItem, idx) => (
+                <div key={idx} className="bg-white p-6 rounded shadow-sm">
+                  <img src={caseItem.image} alt={caseItem.title} className="w-full h-48 object-cover rounded mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">{caseItem.title}</h3>
+                  <p className="text-sm text-gray-600">{caseItem.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center gap-4 mt-6">
+              <button onClick={prevSlide} className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">← Предыдущие</button>
+              <button onClick={nextSlide} className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Следующие →</button>
+            </div>
+            <div className="flex justify-center gap-2 mt-4">
+              {cases.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-indigo-600' : 'bg-gray-300'}`}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      }
+
     function AuditLanding() {
       return (
         <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
@@ -132,24 +211,11 @@
             </section>
 
             {/* Cases */}
-            <section id="cases" className="mt-16">
-              <h2 className="text-2xl font-bold">Кейсы</h2>
-              <div className="mt-6 grid md:grid-cols-3 gap-6">
-                <div className="bg-white p-6 rounded shadow-sm">
-                  <h3 className="font-semibold">Жилой комплекс — 11 000 м²</h3>
-                  <p className="text-sm text-gray-600 mt-2">Оптимизация конструктивных схем, экономия 18.7%.</p>
-                </div>
-                <div className="bg-white p-6 rounded shadow-sm">
-                  <h3 className="font-semibold">Промобъект — 2 800 м²</h3>
-                  <p className="text-sm text-gray-600 mt-2">Снижение расхода материалов, экономия в миллионах.</p>
-                </div>
-                <div className="bg-white p-6 rounded shadow-sm">
-                  <h3 className="font-semibold">Реконструкция госучреждения</h3>
-                  <p className="text-sm text-gray-600 mt-2">Оптимизация инженерии, экономия 11%.</p>
-                </div>
-              </div>
-            </section>
-
+            {/* Cases */}
+        <section id="cases" className="mt-16">
+          <h2 className="text-2xl font-bold">Кейсы</h2>
+          <CasesCarousel />
+        </section>
             {/* Expertise and FAQ */}
             <section className="mt-16 grid md:grid-cols-2 gap-8">
               <div>
