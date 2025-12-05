@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ .Site.Params.description }}">
@@ -9,93 +10,56 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #000; background: #fff; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: #0b4d8c; color: white; padding: 20px 0; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    header nav { display: flex; justify-content: space-between; align-items: center; }
-    header .logo a { color: white; text-decoration: none; font-size: 24px; font-weight: bold; }
-    header .nav-menu { display: flex; list-style: none; gap: 30px; flex-wrap: wrap; }
-    header .nav-menu a { color: white; text-decoration: none; font-weight: bold; transition: opacity 0.3s; }
-    header .nav-menu a:hover { opacity: 0.8; text-decoration: underline; }
+    header { background: #fff; color: #000; padding: 20px 0; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    header .logo { font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+    header nav { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; }
+    header nav button { color: #000; text-decoration: none; font-weight: bold; transition: opacity 0.3s; border: 1px solid #000; background: #fff; padding: 8px 12px; cursor: pointer; }
+    header nav button:hover { opacity: 0.8; text-decoration: underline; }
     main { min-height: 70vh; margin-bottom: 40px; }
-    .tabs-container { margin: 30px 0; border-bottom: 2px solid #0b4d8c; }
-    .tabs-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-    .tab-btn { padding: 12px 24px; background: #e0e0e0; border: none; cursor: pointer; font-size: 16px; font-weight: bold; transition: all 0.3s; border-radius: 5px 5px 0 0; }
-    .tab-btn:hover { background: #b0b0b0; }
-    .tab-btn.active { background: #0b4d8c; color: white; }
-    .tab-content { display: none; padding: 30px 0; animation: fadeIn 0.3s; }
-    .tab-content.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    article { background: white; padding: 30px; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 30px; }
-    article h1 { color: #0b4d8c; margin-bottom: 20px; font-size: 32px; }
-    article h2 { color: #0b4d8c; margin-top: 30px; margin-bottom: 15px; font-size: 24px; border-left: 4px solid #0b4d8c; padding-left: 15px; }
+    article { background: #fff; padding: 30px; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 20px; }
+    article h1 { color: #333; margin-bottom: 20px; }
+    article h2 { color: #333; margin-top: 25px; margin-bottom: 15px; }
     article h3 { color: #333; margin-top: 20px; margin-bottom: 10px; }
-    article p, article li { margin-bottom: 15px; }
-    article ul { margin-left: 30px; }
-    article a { color: #0b4d8c; text-decoration: none; }
-    article a:hover { text-decoration: underline; }
-    .scroll-nav { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .scroll-nav button { padding: 10px 20px; background: #0b4d8c; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; transition: opacity 0.3s; }
-    .scroll-nav button:hover { opacity: 0.8; }
-    footer { background: #333; color: white; text-align: center; padding: 30px 0; margin-top: 80px; }
-    footer p { margin-bottom: 10px; }
+    article ul, article ol { margin-left: 20px; margin-bottom: 15px; }
+    article li { margin-bottom: 8px; }
+    article p { margin-bottom: 15px; }
+    footer { background: #f5f5f5; color: #000; padding: 20px 0; text-align: center; margin-top: 40px; border-top: 1px solid #ddd; }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="container">
-      <div class="logo">
-        <a href="{{ "/" | relURL }}"><strong>{{ .Site.Title }}</strong></a>
-      </div>
-      <ul class="nav-menu">
+  <div class="container">
+    <header>
+      <div class="logo">{{ .Site.Title }}</div>
+      <nav>
         {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        <button onclick="scrollToSection('{{ .Name | lower }}')">📍 {{ .Name }}</button>
         {{ end }}
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container">
-    <div class="scroll-nav">
-      <button onclick="scrollToSection('intro')">📍 Введение</button>
-      <button onclick="scrollToSection('services')">📍 Услуги</button>
-      <button onclick="scrollToSection('process')">📍 Процесс</button>
-      <button onclick="scrollToSection('cases')">📍 Кейсы</button>
-      <button onclick="scrollToSection('about')">📍 О компании</button>
-      <button onclick="scrollToSection('contact')">📍 Контакты</button>
-    </div>
-    {{ block "main" . }}{{ end }}
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; {{ now.Year }} {{ .Site.Title }}. Все права защищены.</p>
-      <p>Тел.: {{ .Site.Params.phone }} | Email: {{ .Site.Params.email }}</p>
-    </div>
-  </footer>
-
+      </nav>
+    </header>
+    <main id="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+      <p>&copy; 2025 {{ .Site.Title }}. Все права защищены.</p>
+      <p>{{ .Site.Params.phone }} | {{ .Site.Params.email }}</p>
+    </footer>
+  </div>
   <script>
-    function scrollToSection(id) {
-      var el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+    function scrollToSection(sectionId) {
+      const sections = {
+        'введение': 'intro',
+        'услуги': 'services',
+        'процесс': 'process',
+        'кейсы': 'cases',
+        'о компании': 'about',
+        'контакты': 'contact'
+      };
+      const id = sections[sectionId] || sectionId;
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    function showTab(tabName) {
-      var tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      var btns = document.querySelectorAll('.tab-btn');
-      btns.forEach(btn => btn.classList.remove('active'));
-      document.getElementById(tabName).classList.add('active');
-      document.querySelector('[onclick="showTab(\''+tabName+'\')" ]')?.classList.add('active');
-    }
-    // Активируем первый таб по умолчанию
-    window.addEventListener('DOMContentLoaded', function() {
-      var firstTab = document.querySelector('.tab-content');
-      var firstBtn = document.querySelector('.tab-btn');
-      if (firstTab && firstBtn) {
-        firstTab.classList.add('active');
-        firstBtn.classList.add('active');
-      }
-    });
   </script>
 </body>
 </html>
