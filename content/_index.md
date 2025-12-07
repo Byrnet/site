@@ -1,5 +1,6 @@
 ---
 title: "Техническое обследование зданий"
+layout: "landing"
 draft: false
 ---
 
