@@ -115,24 +115,21 @@ function AuditLanding() {
           <p className="text-gray-600 mt-3 text-center max-w-2xl mx-auto">Проблема не в подрядчиках — проблема заложена ещё на этапе проектирования.</p>
 
           <div className="mt-10 grid md:grid-cols-3 gap-6">
-            <article className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-400">
-              <div className="text-3xl mb-3">⚠️</div>
+            <article className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg">Перестраховка проектировщиков</h3>
               <p className="text-sm text-gray-600 mt-2">
                 Конструкторы закладывают двойной запас прочности "на всякий случай". 
                 За лишний бетон и арматуру платите вы.
               </p>
             </article>
-            <article className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-orange-400">
-              <div className="text-3xl mb-3">📦</div>
+            <article className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg">Устаревшие решения</h3>
               <p className="text-sm text-gray-600 mt-2">
                 Типовые узлы 10-летней давности вместо современных материалов и технологий. 
                 Дороже и труднее в исполнении.
               </p>
             </article>
-            <article className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-yellow-400">
-              <div className="text-3xl mb-3">📊</div>
+            <article className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg">Ошибки в спецификациях</h3>
               <p className="text-sm text-gray-600 mt-2">
                 Завышенные объёмы материалов, которые сложно проверить вручную. 
@@ -256,7 +253,7 @@ function AuditLanding() {
                   Наша задача — не просто сэкономить, а сделать здание надёжнее и технологичнее."
                 </blockquote>
                 <div className="mt-6">
-                  <div className="font-semibold">Антон Бырнет</div>
+                  <div className="font-semibold">Антон Кручина</div>
                   <div className="text-sm text-gray-500">Главный инженер, основатель Audit & Project</div>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3 text-sm">
@@ -266,9 +263,7 @@ function AuditLanding() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-64 h-64 bg-gray-200 rounded-full flex items-center justify-center text-6xl">
-                  👷
-                </div>
+                <img src="img/anton.png" alt="Антон Кручина" className="w-64 h-64 rounded-full object-cover shadow-lg" />
               </div>
             </div>
           </div>
