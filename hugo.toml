@@ -1,5 +1,5 @@
 theme = ""
-baseURL = "https://byrnet.github.io/site/"
+baseURL = "https://byrnet.github.io/"
 title = "Huabing Blog"
 languageCode = "en-us"
 preserveTaxonomyNames = true
