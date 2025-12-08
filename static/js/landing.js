@@ -41,7 +41,7 @@ function AuditLanding() {
               <a href="#problem" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Проблема</a>
               <a href="#solution" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Решение</a>
               <a href="#cases" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Кейсы</a>
-              <a href="#docs" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Документы соответствия</a>
+              <a href="#docs" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Документы</a>
               <a href="#team" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Команда</a>
               <a href="#contact" className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors text-center" onClick={() => setIsMenuOpen(false)}>Рассчитать экономию</a>
             </nav>
