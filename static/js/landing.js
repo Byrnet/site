@@ -12,7 +12,7 @@ function AuditLanding() {
             <div className="w-10 h-10 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">A</div>
             <div>
               <div className="text-sm font-semibold">Audit & Project</div>
-              <div className="text-xs text-gray-500">Оптимизация проектов | Аудит строительства</div>
+              <div className="text-xs text-gray-500">Оптимизация проектов | Консультации по состоянию существующих зданий и сооружений</div>
             </div>
           </div>
 
@@ -20,6 +20,7 @@ function AuditLanding() {
             <a href="#problem" className="hover:text-indigo-600">Проблема</a>
             <a href="#solution" className="hover:text-indigo-600">Решение</a>
             <a href="#cases" className="hover:text-indigo-600">Кейсы</a>
+            <a href="#docs" className="hover:text-indigo-600">Документы соответствия</a>
             <a href="#team" className="hover:text-indigo-600">Команда</a>
             <a href="#contact" className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors">Рассчитать экономию</a>
           </nav>
@@ -36,7 +37,7 @@ function AuditLanding() {
               Срежем до <span className="text-indigo-600">30%</span> стоимости строительства без изменения архитектуры
             </h1>
             <p className="mt-4 text-gray-700 text-lg">
-              Аудит проектной документации и оптимизация конструктивных решений. 
+              Анализ проектной документации и оптимизация архитектурно-строительных решений. 
               <strong> Вы платите только % от реально сэкономленных денег.</strong>
             </p>
             <p className="mt-2 text-gray-600">
@@ -55,11 +56,11 @@ function AuditLanding() {
             <div className="mt-8 flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">✓</div>
-                <span>СНиП / Eurocode</span>
+                <span>СНиП / ТКП / ГОСТ / Eurocode</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">✓</div>
-                <span>Гарантия прохождения экспертизы</span>
+                <span>Гарантия экспертности принятых решений</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">✓</div>
@@ -142,7 +143,7 @@ function AuditLanding() {
         {/* Solution Section */}
         <section id="solution" className="mt-20">
           <h2 className="text-2xl md:text-3xl font-bold text-center">Находим скрытые резервы там, где другие не смотрят</h2>
-          <p className="text-gray-600 mt-3 text-center max-w-2xl mx-auto">Прозрачный процесс от первого звонка до сопровождения в экспертизе.</p>
+          <p className="text-gray-600 mt-3 text-center max-w-2xl mx-auto">Прозрачный процесс от первого звонка до итогового результата.</p>
 
           <div className="mt-10 grid md:grid-cols-4 gap-6">
             <div className="text-center">
@@ -153,7 +154,7 @@ function AuditLanding() {
             <div className="text-center">
               <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-indigo-600">2</div>
               <h3 className="font-semibold">Перерасчёт нагрузок</h3>
-              <p className="text-sm text-gray-600 mt-2">Убираем лишний металл и бетон, сохраняя несущую способность.</p>
+              <p className="text-sm text-gray-600 mt-2">Рекомендации по экономии металла и бетона, сохраняя несущую способность.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-indigo-600">3</div>
@@ -162,8 +163,8 @@ function AuditLanding() {
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-indigo-600">4</div>
-              <h3 className="font-semibold">Защита в экспертизе</h3>
-              <p className="text-sm text-gray-600 mt-2">Сопровождаем проект до положительного заключения.</p>
+              <h3 className="font-semibold">Экспертный ответ</h3>
+              <p className="text-sm text-gray-600 mt-2">Все предлагаемые изменения проходят проверку на соответствие и получают экономическое обоснование.</p>
             </div>
           </div>
         </section>
@@ -189,7 +190,7 @@ function AuditLanding() {
                   </div>
                   <div className="flex justify-between font-semibold text-green-600">
                     <span>Экономия:</span>
-                    <span>12 млн руб (18%)</span>
+                    <span>450тыс. руб (18%) $150 000</span>
                   </div>
                 </div>
                 <div className="mt-3 text-xs text-gray-400">Срок аудита: 7 дней</div>
@@ -211,7 +212,7 @@ function AuditLanding() {
                   </div>
                   <div className="flex justify-between font-semibold text-green-600">
                     <span>Экономия:</span>
-                    <span>8.5 млн руб (19%)</span>
+                    <span>112 тыс.руб (19%) $37 000</span>
                   </div>
                 </div>
                 <div className="mt-3 text-xs text-gray-400">Срок аудита: 5 дней</div>
@@ -233,10 +234,40 @@ function AuditLanding() {
                   </div>
                   <div className="flex justify-between font-semibold text-green-600">
                     <span>Экономия:</span>
-                    <span>6 млн руб (24%)</span>
+                    <span>225 тыс (24%) $75 000</span>
                   </div>
                 </div>
                 <div className="mt-3 text-xs text-gray-400">Срок аудита: 10 дней</div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <img src="img/cases/cottage_178m2.jpg" alt="Коттедж 178м2" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="font-semibold text-lg">Коттедж 178м2</h3>
+                <div className="mt-3 space-y-2 text-sm">
+                  <p className="text-gray-600">Оптимизация проектных решений частного дома.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <img src="img/cases/house_inspection.jpg" alt="Осмотр дома" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="font-semibold text-lg">Осмотр дома перед покупкой</h3>
+                <div className="mt-3 space-y-2 text-sm">
+                  <p className="text-gray-600">Выявление скрытых дефектов и оценка реальной стоимости.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <img src="img/cases/defect_elimination.jpg" alt="Устранение дефектов" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="font-semibold text-lg">Устранение дефектов</h3>
+                <div className="mt-3 space-y-2 text-sm">
+                  <p className="text-gray-600">Определение причин появления дефектов и рекомендации по их устранению.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -249,17 +280,18 @@ function AuditLanding() {
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold">За каждым решением — 20 лет опыта</h2>
                 <blockquote className="mt-6 text-lg text-gray-700 italic border-l-4 border-indigo-400 pl-4">
-                  "Я лично отвечаю за каждый килограмм убранной арматуры своей репутацией и аттестатом. 
-                  Наша задача — не просто сэкономить, а сделать здание надёжнее и технологичнее."
+                  "Надёжность — в деталях. Поэтому для нас экономить — значит строить грамотно. А ваша выгода — в идеальном результате."
                 </blockquote>
                 <div className="mt-6">
                   <div className="font-semibold">Антон Кручина</div>
                   <div className="text-sm text-gray-500">Главный инженер, основатель Audit & Project</div>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Аттестат ГАП</span>
-                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">100+ объектов</span>
-                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">BY, RU, EU</span>
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Аттестат ГИП 100+</span>
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Аттестат главного конструктора</span>
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Аттестат специалиста по обследованию зданий и сооружений</span>
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Инженер-строитель České vysoké učení technické v Praze</span>
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">объектовBY, RU, EU</span>
                 </div>
               </div>
               <div className="flex justify-center">
@@ -289,17 +321,17 @@ function AuditLanding() {
             </details>
             <details className="bg-white p-5 rounded-lg shadow-sm group">
               <summary className="font-medium cursor-pointer list-none flex justify-between items-center">
-                А если экспертиза не примет изменения?
+                А если проектная организация не признает ошибки?
                 <span className="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
               </summary>
-              <p className="mt-3 text-gray-600">Мы сопровождаем проект в экспертизе и отвечаем на все замечания. За 5 лет — 100% положительных заключений.</p>
+              <p className="mt-3 text-gray-600">Мы сопровождаем проект и отвечаем на все вопросы проектной организации касаемые изменений. Проектные организации обязана внести все экономически-целесообразные решения по письму заказчика на основании действующего законодательства</p>
             </details>
             <details className="bg-white p-5 rounded-lg shadow-sm group">
               <summary className="font-medium cursor-pointer list-none flex justify-between items-center">
                 Работаете с госзаказчиками?
                 <span className="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
               </summary>
-              <p className="mt-3 text-gray-600">Да, у нас есть опыт работы с бюджетными объектами. Все документы оформляем в соответствии с требованиями госэкспертизы.</p>
+              <p className="mt-3 text-gray-600">Да, у нас есть опыт работы с бюджетными объектами. Все документы оформляем в соответствии с требованиями заказчика.</p>
             </details>
           </div>
         </section>
@@ -350,11 +382,11 @@ function AuditLanding() {
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <div className="font-semibold text-gray-900">Audit & Project</div>
-              <div className="mt-2">Оптимизация проектных решений и аудит строительства. Минск, Беларусь.</div>
+              <div className="mt-2">Оптимизация проектных решений, аудит проектной документации, консультации при покупке зданий. Минск, Беларусь.</div>
             </div>
             <div>
               <div className="font-semibold text-gray-900">Работаем по нормативам</div>
-              <div className="mt-2">СНиП, СП, ТКП, Eurocode. Все решения проходят государственную экспертизу.</div>
+              <div className="mt-2">СНиП, СП, ТКП, Eurocode.</div>
             </div>
             <div>
               <div className="font-semibold text-gray-900">Связаться</div>
