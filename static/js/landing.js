@@ -2,6 +2,7 @@ const { useState } = React;
 
 function AuditLanding() {
   const [fileName, setFileName] = useState("Файл не выбран");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
@@ -25,8 +26,27 @@ function AuditLanding() {
             <a href="#contact" className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors">Рассчитать экономию</a>
           </nav>
 
-          <button className="md:hidden p-2 rounded-md border">Меню</button>
+          <button 
+            className="md:hidden p-2 rounded-md border"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            Меню
+          </button>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-t p-4 absolute top-full left-0 right-0 shadow-lg z-50">
+            <nav className="flex flex-col gap-4 text-sm">
+              <a href="#problem" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Проблема</a>
+              <a href="#solution" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Решение</a>
+              <a href="#cases" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Кейсы</a>
+              <a href="#docs" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Документы соответствия</a>
+              <a href="#team" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Команда</a>
+              <a href="#contact" className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors text-center" onClick={() => setIsMenuOpen(false)}>Рассчитать экономию</a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero */}
@@ -246,8 +266,21 @@ function AuditLanding() {
               <div className="p-6">
                 <h3 className="font-semibold text-lg">Коттедж 178м2</h3>
                 <div className="mt-3 space-y-2 text-sm">
-                  <p className="text-gray-600">Оптимизация проектных решений частного дома.</p>
+                  <p className="text-gray-600 mb-2">Оптимизация проектных решений частного дома.</p>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Было:</span>
+                    <span>Ленточные фундаменты</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Стало:</span>
+                    <span>Свайно-ростверковые</span>
+                  </div>
+                  <div className="flex justify-between font-semibold text-green-600">
+                    <span>Экономия:</span>
+                    <span>14тыс. руб (54%) $4600</span>
+                  </div>
                 </div>
+                <div className="mt-3 text-xs text-gray-400">Срок аудита: 7 дней</div>
               </div>
             </div>
 
