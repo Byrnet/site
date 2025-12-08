@@ -19,6 +19,7 @@ function AuditLanding() {
 
           <nav className="hidden md:flex gap-6 items-center text-sm">
             <a href="#problem" className="hover:text-indigo-600">Проблема</a>
+            <a href="#services" className="hover:text-indigo-600">Услуги</a>
             <a href="#solution" className="hover:text-indigo-600">Решение</a>
             <a href="#cases" className="hover:text-indigo-600">Кейсы</a>
             <a href="#docs" className="hover:text-indigo-600">Документы соответствия</a>
@@ -39,6 +40,7 @@ function AuditLanding() {
           <div className="md:hidden bg-white border-t p-4 absolute top-full left-0 right-0 shadow-lg z-50">
             <nav className="flex flex-col gap-4 text-sm">
               <a href="#problem" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Проблема</a>
+              <a href="#services" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Услуги</a>
               <a href="#solution" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Решение</a>
               <a href="#cases" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Кейсы</a>
               <a href="#docs" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Документы</a>
@@ -155,6 +157,62 @@ function AuditLanding() {
               <p className="text-sm text-gray-600 mt-2">
                 Завышенные объёмы материалов, которые сложно проверить вручную. 
                 Десятки миллионов уходят "в никуда".
+              </p>
+            </article>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="mt-20">
+          <h2 className="text-2xl md:text-3xl font-bold text-center">Наши услуги</h2>
+          <p className="text-gray-600 mt-3 text-center max-w-2xl mx-auto">Комплексный подход к оптимизации и контролю строительства.</p>
+
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">🔍</div>
+              <h3 className="font-semibold text-lg">Аудит перед покупкой</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Полная диагностика недвижимости. Определим все риски и способы сэкономить при покупке. Проверка фундамента, кровли, несущих конструкций.
+              </p>
+            </article>
+
+            <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">📋</div>
+              <h3 className="font-semibold text-lg">Техническое обследование</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Детальная оценка состояния здания. Выявляем скрытые дефекты и разрабатываем план восстановления. Для жилых, офисных и промышленных зданий.
+              </p>
+            </article>
+
+            <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">📊</div>
+              <h3 className="font-semibold text-lg">Диагностика и прогноз</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Определяем причины повреждений и предсказываем развитие проблем. Используем современное оборудование для точных измерений.
+              </p>
+            </article>
+
+            <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">🏗️</div>
+              <h3 className="font-semibold text-lg">Рекомендации по усилению</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Разрабатываем проекты укрепления конструкций. Предлагаем оптимальные решения с расчётом затрат и материалов.
+              </p>
+            </article>
+
+            <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">💰</div>
+              <h3 className="font-semibold text-lg">Инвестиционная консультация</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Помогаем принять правильное решение о покупке объекта. Оцениваем риски, потенциал развития и реальную стоимость вложений.
+              </p>
+            </article>
+
+            <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">⚖️</div>
+              <h3 className="font-semibold text-lg">Оптимизация проектов</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Анализ готовых проектов на предмет избыточных решений. Снижение стоимости строительства без потери качества и надежности.
               </p>
             </article>
           </div>
