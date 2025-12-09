@@ -18,7 +18,6 @@ function AuditLanding() {
           </div>
 
           <nav className="hidden md:flex gap-6 items-center text-sm">
-            <a href="#problem" className="hover:text-indigo-600">Проблема</a>
             <a href="#services" className="hover:text-indigo-600">Услуги</a>
             <a href="#solution" className="hover:text-indigo-600">Решение</a>
             <a href="#cases" className="hover:text-indigo-600">Кейсы</a>
@@ -39,7 +38,6 @@ function AuditLanding() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t p-4 absolute top-full left-0 right-0 shadow-lg z-50">
             <nav className="flex flex-col gap-4 text-sm">
-              <a href="#problem" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Проблема</a>
               <a href="#services" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Услуги</a>
               <a href="#solution" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Решение</a>
               <a href="#cases" className="hover:text-indigo-600" onClick={() => setIsMenuOpen(false)}>Кейсы</a>
@@ -178,9 +176,9 @@ function AuditLanding() {
 
             <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">📋</div>
-              <h3 className="font-semibold text-lg">Техническое обследование</h3>
+              <h3 className="font-semibold text-lg">Осмотр здания</h3>
               <p className="text-sm text-gray-600 mt-2">
-                Детальная оценка состояния здания. Выявляем скрытые дефекты и разрабатываем план восстановления. Для жилых, офисных и промышленных зданий.
+                Осмотр на предмет наличия явных и скрытых дефектов для жилых, офисных и промышленных зданий.
               </p>
             </article>
 
@@ -194,9 +192,9 @@ function AuditLanding() {
 
             <article className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">🏗️</div>
-              <h3 className="font-semibold text-lg">Рекомендации по усилению</h3>
+              <h3 className="font-semibold text-lg">Рекомендации по устранению</h3>
               <p className="text-sm text-gray-600 mt-2">
-                Разрабатываем проекты укрепления конструкций. Предлагаем оптимальные решения с расчётом затрат и материалов.
+                Разрабатываем рекомендации по устранению дефектов и причин их появления. Предлагаем оптимальные решения с учетом затрат и материалов.
               </p>
             </article>
 
@@ -298,9 +296,9 @@ function AuditLanding() {
             </div>
 
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/reconstruction.jpg" alt="Реконструкция" className="w-full h-48 object-cover" />
+              <img src="img/reconstruction-fok.jpg" alt="Реконструкция" className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="font-semibold text-lg">Реконструкция школы — 4 500 м²</h3>
+                <h3 className="font-semibold text-lg">Реконструкция ФОК — 4 500 м²</h3>
                 <div className="mt-3 space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Было:</span>
