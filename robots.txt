@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://byrnet.github.io/sitemap.xml
