@@ -43,6 +43,10 @@ function AuditLanding() {
   // Form states
   const [estimateForm, setEstimateForm] = useState({ name: '', contact: '', typeIndex: 0, file: null });
   const [contactForm, setContactForm] = useState({ name: '', phone: '', details: '' });
+  
+  // Submission states
+  const [estimateSent, setEstimateSent] = useState(false);
+  const [contactSent, setContactSent] = useState(false);
 
   useEffect(() => {
     // Check URL for language
@@ -70,6 +74,9 @@ ${t.email.estimate.file.padEnd(15)} ${fileName || t.form.file_none}
 ---------------------------------------------------
     `;
     window.location.href = `mailto:auditprojekt@yandex.by?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    setEstimateSent(true);
+    setTimeout(() => setEstimateSent(false), 5000);
   };
 
   const handleContactSubmit = (e) => {
@@ -84,6 +91,9 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
 ---------------------------------------------------
     `;
     window.location.href = `mailto:auditprojekt@yandex.by?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    setContactSent(true);
+    setTimeout(() => setContactSent(false), 5000);
   };
 
   return (
@@ -219,8 +229,11 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
                     <span className="text-xs text-gray-500 truncate max-w-[150px]">{fileName || t.form.file_none}</span>
                   </div>
                 </div>
-                <button className="w-full bg-indigo-600 text-white py-3 rounded font-medium hover:bg-indigo-700 transition-colors">
-                  {t.form.submit_btn}
+                <button 
+                  className={`w-full text-white py-3 rounded font-medium transition-colors ${estimateSent ? 'bg-green-600 hover:bg-green-700' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+                  disabled={estimateSent}
+                >
+                  {estimateSent ? t.form.submit_btn_success : t.form.submit_btn}
                 </button>
               </form>
             </div>
@@ -487,8 +500,11 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
                 onChange={(e) => setContactForm({...contactForm, details: e.target.value})}
               ></textarea>
               <div className="flex gap-2">
-                <button className="flex-1 bg-indigo-600 text-white py-3 rounded font-medium hover:bg-indigo-700 transition-colors">
-                  {t.contact.btn}
+                <button 
+                  className={`flex-1 text-white py-3 rounded font-medium transition-colors ${contactSent ? 'bg-green-600 hover:bg-green-700' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+                  disabled={contactSent}
+                >
+                  {contactSent ? t.contact.btn_success : t.contact.btn}
                 </button>
               </div>
             </form>

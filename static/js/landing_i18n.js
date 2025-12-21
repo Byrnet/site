@@ -34,6 +34,7 @@ window.LANDING_CONTENT = {
       submit_btn: "Получить бесплатную оценку",
       guarantee_label: "Гарантия:",
       guarantee_text: "нет экономии — не платите ничего.",
+      submit_btn_success: "Ваш запрос отправлен",
       types: [
         "Жилой комплекс",
         "Промышленный объект",
@@ -134,7 +135,8 @@ window.LANDING_CONTENT = {
       name_placeholder: "Ваше имя",
       phone_placeholder: "Телефон",
       details_placeholder: "Коротко о проекте (площадь, тип, стадия)",
-      btn: "Получить оценку"
+      btn: "Получить оценку",
+      btn_success: "Ваш запрос отправлен"
     },
     footer: {
       desc: "Оптимизация проектных решений, аудит проектной документации, консультации при покупке зданий. Минск, Беларусь.",
@@ -200,6 +202,7 @@ window.LANDING_CONTENT = {
       submit_btn: "Get free estimate",
       guarantee_label: "Guarantee:",
       guarantee_text: "no savings — you pay nothing.",
+      submit_btn_success: "Request Sent",
       types: [
         "Residential Complex",
         "Industrial Object",
@@ -300,7 +303,8 @@ window.LANDING_CONTENT = {
       name_placeholder: "Your Name",
       phone_placeholder: "Phone",
       details_placeholder: "Briefly about the project (area, type, stage)",
-      btn: "Get Estimate"
+      btn: "Get Estimate",
+      btn_success: "Request Sent"
     },
     footer: {
       desc: "Optimization of design solutions, audit of project documentation, consulting on building purchase. Minsk, Belarus.",
