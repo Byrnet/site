@@ -47,6 +47,7 @@ function AuditLanding() {
   // Submission states
   const [estimateSent, setEstimateSent] = useState(false);
   const [contactSent, setContactSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     // Check URL for language
@@ -56,44 +57,94 @@ function AuditLanding() {
     } else {
       setLang('ru');
     }
+
+    // Initialize EmailJS
+    if (window.emailjs && window.EMAIL_CONFIG) {
+        emailjs.init(window.EMAIL_CONFIG.PUBLIC_KEY);
+    }
   }, []);
 
   const t = window.LANDING_CONTENT[lang];
   const services = window.LANDING_SERVICES[lang] || window.LANDING_SERVICES['ru'];
 
+  const sendEmail = (templateParams, setSentState) => {
+    if (!window.EMAIL_CONFIG || window.EMAIL_CONFIG.PUBLIC_KEY === "YOUR_PUBLIC_KEY_HERE") {
+        alert("EmailJS is not configured. Please set API keys in js/email_config.js");
+        return;
+    }
+
+    setIsSending(true);
+
+    emailjs.send(
+        window.EMAIL_CONFIG.SERVICE_ID,
+        window.EMAIL_CONFIG.TEMPLATE_ID,
+        templateParams
+    )
+    .then((response) => {
+       console.log('SUCCESS!', response.status, response.text);
+       setSentState(true);
+       setIsSending(false);
+       setTimeout(() => setSentState(false), 5000);
+    }, (err) => {
+       console.log('FAILED...', err);
+       alert('Failed to send email. Please try again later or contact us directly.');
+       setIsSending(false);
+    });
+  };
+
   const handleEstimateSubmit = (e) => {
     e.preventDefault();
-    const subject = t.email.estimate.subject;
-    const body = `
+    
+    const templateParams = {
+        subject: t.email.estimate.subject,
+        title: t.email.estimate.body_title,
+        name_label: t.email.estimate.name,
+        name_value: estimateForm.name,
+        contact_label: t.email.estimate.contact,
+        contact_value: estimateForm.contact,
+        type_label: t.email.estimate.type,
+        type_value: t.form.types[estimateForm.typeIndex],
+        file_label: t.email.estimate.file,
+        file_value: fileName || t.form.file_none,
+        // Fallback for simple templates
+        message: `
 ${t.email.estimate.body_title}
 ---------------------------------------------------
-${t.email.estimate.name.padEnd(15)} ${estimateForm.name}
-${t.email.estimate.contact.padEnd(15)} ${estimateForm.contact}
-${t.email.estimate.type.padEnd(15)} ${t.form.types[estimateForm.typeIndex]}
-${t.email.estimate.file.padEnd(15)} ${fileName || t.form.file_none}
+${t.email.estimate.name} ${estimateForm.name}
+${t.email.estimate.contact} ${estimateForm.contact}
+${t.email.estimate.type} ${t.form.types[estimateForm.typeIndex]}
+${t.email.estimate.file} ${fileName || t.form.file_none}
 ---------------------------------------------------
-    `;
-    window.location.href = `mailto:auditprojekt@yandex.by?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    setEstimateSent(true);
-    setTimeout(() => setEstimateSent(false), 5000);
+        `
+    };
+
+    sendEmail(templateParams, setEstimateSent);
   };
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
-    const subject = t.email.contact.subject;
-    const body = `
+
+    const templateParams = {
+        subject: t.email.contact.subject,
+        title: t.email.contact.body_title,
+        name_label: t.email.contact.name,
+        name_value: contactForm.name,
+        contact_label: t.email.contact.phone,
+        contact_value: contactForm.phone,
+        details_label: t.email.contact.details,
+        details_value: contactForm.details,
+        // Fallback for simple templates
+        message: `
 ${t.email.contact.body_title}
 ---------------------------------------------------
-${t.email.contact.name.padEnd(15)} ${contactForm.name}
-${t.email.contact.phone.padEnd(15)} ${contactForm.phone}
-${t.email.contact.details.padEnd(15)} ${contactForm.details}
+${t.email.contact.name} ${contactForm.name}
+${t.email.contact.phone} ${contactForm.phone}
+${t.email.contact.details} ${contactForm.details}
 ---------------------------------------------------
-    `;
-    window.location.href = `mailto:auditprojekt@yandex.by?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    setContactSent(true);
-    setTimeout(() => setContactSent(false), 5000);
+        `
+    };
+
+    sendEmail(templateParams, setContactSent);
   };
 
   return (
@@ -230,10 +281,10 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
                   </div>
                 </div>
                 <button 
-                  className={`w-full text-white py-3 rounded font-medium transition-colors ${estimateSent ? 'bg-green-600 hover:bg-green-700' : 'bg-indigo-600 hover:bg-indigo-700'}`}
-                  disabled={estimateSent}
+                  className={`w-full text-white py-3 rounded font-medium transition-colors ${estimateSent ? 'bg-green-600 hover:bg-green-700' : 'bg-indigo-600 hover:bg-indigo-700'} ${isSending ? 'opacity-75 cursor-not-allowed' : ''}`}
+                  disabled={estimateSent || isSending}
                 >
-                  {estimateSent ? t.form.submit_btn_success : t.form.submit_btn}
+                  {isSending ? (lang === 'en' ? 'Sending...' : 'Отправка...') : (estimateSent ? t.form.submit_btn_success : t.form.submit_btn)}
                 </button>
               </form>
             </div>
@@ -501,10 +552,10 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
               ></textarea>
               <div className="flex gap-2">
                 <button 
-                  className={`flex-1 text-white py-3 rounded font-medium transition-colors ${contactSent ? 'bg-green-600 hover:bg-green-700' : 'bg-indigo-600 hover:bg-indigo-700'}`}
-                  disabled={contactSent}
+                  className={`flex-1 text-white py-3 rounded font-medium transition-colors ${contactSent ? 'bg-green-600 hover:bg-green-700' : 'bg-indigo-600 hover:bg-indigo-700'} ${isSending ? 'opacity-75 cursor-not-allowed' : ''}`}
+                  disabled={contactSent || isSending}
                 >
-                  {contactSent ? t.contact.btn_success : t.contact.btn}
+                  {isSending ? (lang === 'en' ? 'Sending...' : 'Отправка...') : (contactSent ? t.contact.btn_success : t.contact.btn)}
                 </button>
               </div>
             </form>
