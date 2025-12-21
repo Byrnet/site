@@ -282,7 +282,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             {/* Case 1 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/residential-complex.jpg" alt="Case 1" className="w-full h-48 object-cover" />
+              <img src="/img/cases/residential-complex.jpg" alt="Case 1" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-semibold text-lg">{t.cases.items[0].title}</h3>
                 <div className="mt-3 space-y-2 text-sm">
@@ -305,7 +305,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
 
             {/* Case 2 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/industrial-object.jpg" alt="Case 2" className="w-full h-48 object-cover" />
+              <img src="/img/cases/industrial-object.jpg" alt="Case 2" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-semibold text-lg">{t.cases.items[1].title}</h3>
                 <div className="mt-3 space-y-2 text-sm">
@@ -328,7 +328,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
 
             {/* Case 3 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/reconstruction-fok-before-after.jpg" alt="Case 3" className="w-full h-48 object-cover" />
+              <img src="/img/cases/reconstruction-fok-before-after.jpg" alt="Case 3" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-semibold text-lg">{t.cases.items[2].title}</h3>
                 <div className="mt-3 space-y-2 text-sm">
@@ -351,7 +351,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
 
             {/* Case 4 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/cottage_178m2.jpg" alt="Case 4" className="w-full h-48 object-cover" />
+              <img src="/img/cases/cottage_178m2.jpg" alt="Case 4" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-semibold text-lg">{t.cases.items[3].title}</h3>
                 <div className="mt-3 space-y-2 text-sm">
@@ -375,7 +375,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
 
             {/* Case 5 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/house_inspection.jpg" alt="Case 5" className="w-full h-48 object-cover" />
+              <img src="/img/cases/house_inspection.jpg" alt="Case 5" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-semibold text-lg">{t.cases.items[4].title}</h3>
                 <div className="mt-3 space-y-2 text-sm">
@@ -386,7 +386,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
 
             {/* Case 6 */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <img src="img/cases/defect_elimination.jpg" alt="Case 6" className="w-full h-48 object-cover" />
+              <img src="/img/cases/defect_elimination.jpg" alt="Case 6" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-semibold text-lg">{t.cases.items[5].title}</h3>
                 <div className="mt-3 space-y-2 text-sm">
@@ -417,7 +417,7 @@ ${t.email.contact.details.padEnd(15)} ${contactForm.details}
                 </div>
               </div>
               <div className="flex justify-center">
-                <img src="img/anton.png" alt="Anton Kruchina" className="w-64 h-64 rounded-full object-cover shadow-lg" />
+                <img src="/img/anton.png" alt="Anton Kruchina" className="w-64 h-64 rounded-full object-cover shadow-lg" />
               </div>
             </div>
           </div>
