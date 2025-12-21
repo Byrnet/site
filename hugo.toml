@@ -2,6 +2,19 @@ theme = ""
 baseURL = "https://byrnet.github.io/"
 title = "Audit & Project - Оптимизация строительства"
 languageCode = "ru-ru"
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.ru]
+    languageName = "RU"
+    weight = 1
+    title = "Audit & Project - Оптимизация строительства"
+  [languages.en]
+    languageName = "EN"
+    weight = 2
+    title = "Audit & Project - Construction Optimization"
+
 preserveTaxonomyNames = true
 hasCJKLanguage = false
 
